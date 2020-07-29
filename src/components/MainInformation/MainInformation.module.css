@@ -1,0 +1,22 @@
+.section {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.movieImg {
+  margin-right: 20px;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.genresList {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.genresItem:not(:last-child) {
+  margin-right: 20px;
+}

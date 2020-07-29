@@ -1,0 +1,9 @@
+.section {
+  border-top: 2px solid gray;
+}
+
+.additionalInfoList {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid gray;
+}
