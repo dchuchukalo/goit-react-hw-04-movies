@@ -8,19 +8,44 @@ import styles from './AdditionalInformation.module.css';
 
 class AdditionalInformation extends Component {
   state = {};
+
   render() {
     const { url, params } = this.props.match;
     const { movieId } = params;
+    const from = () => {
+      if (this.props.location.state) {
+        return this.props.location.state.from;
+      }
+    };
+
     return (
       <section className={styles.section}>
         <p>Additional information</p>
 
         <ul className={styles.additionalInfoList}>
           <li>
-            <Link to={`${url}/cast`}>Cast</Link>
+            <Link
+              to={{
+                pathname: `${url}/cast`,
+                state: {
+                  from: from(),
+                },
+              }}
+            >
+              Cast
+            </Link>
           </li>
           <li>
-            <Link to={`${url}/reviews`}>Reviews</Link>
+            <Link
+              to={{
+                pathname: `${url}/reviews`,
+                state: {
+                  from: from(),
+                },
+              }}
+            >
+              Reviews
+            </Link>
           </li>
         </ul>
         <Route
