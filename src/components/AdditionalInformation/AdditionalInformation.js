@@ -9,15 +9,10 @@ import styles from './AdditionalInformation.module.css';
 class AdditionalInformation extends Component {
   state = {};
 
-  getFrom = () => {
-    if (this.props.location.state) {
-      return this.props.location.state.from;
-    }
-  };
-
   render() {
     const { url, params } = this.props.match;
     const { movieId } = params;
+    const from = this.props.location?.state?.from;
 
     return (
       <section className={styles.section}>
@@ -29,7 +24,7 @@ class AdditionalInformation extends Component {
               to={{
                 pathname: `${url}/cast`,
                 state: {
-                  from: this.getFrom(),
+                  from,
                 },
               }}
             >
@@ -41,7 +36,7 @@ class AdditionalInformation extends Component {
               to={{
                 pathname: `${url}/reviews`,
                 state: {
-                  from: this.getFrom(),
+                  from,
                 },
               }}
             >
